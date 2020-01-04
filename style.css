@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: black;
+}
+
+button.special {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 120px;
+    text-align: center;
+    text-decoration: none;
+    padding-bottom: 8px;
+    font-size: 48px;
+    letter-spacing: 0.1em;
+    color: white;
+    /* text-transform: uppercase; */
+    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    background-size: 400%;
+    border-radius: 60px;
+    cursor: pointer;
+    border-width: 5px;
+}
+
+button.special::before {
+    content: '';
+    position:absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    background-size: 400%;
+    border-radius: 60px;
+    z-index: -1;
+}
+
+button.special:hover {
+    animation: myAnimation 20s linear infinite;
+}
+
+button.special:hover::before {
+    filter: blur(15px);
+    animation: myAnimation 20s linear infinite;
+}
+
+@keyframes myAnimation {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+button.regular {
+    color: white;
+    background-color: black;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px;
+}
